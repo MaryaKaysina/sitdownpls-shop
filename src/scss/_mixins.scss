@@ -1,0 +1,25 @@
+@import "./mixins/breakpoint";
+@import "./mixins/burger";
+@import "./mixins/checkbox";
+@import "./mixins/font-face";
+
+@mixin bg-cover {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@mixin font-playfair {
+  font-family: "PlayfairDisplay", serif;
+  font-weight: 900;
+}
