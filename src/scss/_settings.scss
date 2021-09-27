@@ -28,6 +28,9 @@ a {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1310px;
+  @include larg {
+    padding: 0 36px;
+  }
 }
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
