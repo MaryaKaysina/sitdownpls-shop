@@ -14,12 +14,17 @@ body {
 }
 img {
   max-width: 100%;
+  height: auto;
 }
 a {
   text-decoration: none;
 }
 .site-container {
   overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  @include mobile {
+    width: 100%;
+    min-width: 320px;
+  }
 }
 .is-hidden {
   display: none !important; // stylelint-disable-line declaration-no-important
@@ -31,7 +36,17 @@ a {
   @include larg {
     padding: 0 36px;
   }
+  @include sm-tablet {
+    padding: 0 72px;
+  }
+  @include lg-mobile {
+    padding: 0 15px;
+  }
+  @include mobile {
+    padding: 0 12px;
+  }
 }
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
+

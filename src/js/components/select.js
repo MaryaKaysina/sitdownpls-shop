@@ -7,6 +7,11 @@ $(document).ready(function() {
     searchEnabled: false,
     itemSelectText: '',
     shouldSort: false,
+    classNames: {
+      containerOuter: 'choices choices__region',
+      list: 'choices__list--region',
+      flippedState: '',
+    },
   });
 
   const choicesFilter = new Choices(filter, {
