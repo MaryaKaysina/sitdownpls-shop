@@ -7,3 +7,48 @@
 // подключения компонентов страницы
 @import "./components/header";
 @import "./components/hero";
+
+.title-hidden {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+.btn {
+  @include btn-reset;
+  padding: 20px 48px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  font-size: 16px;
+  line-height: 100%;
+  transition: background .3s ease-in-out, color .3s ease-in-out;
+  &--primary {
+    background: #A65CF0;
+    font-weight: bold;
+    color: #FFFFFF;
+    transition: background .3s ease-in-out, border .3s ease-in-out;
+    @include lg-mobile {
+      width: 100%;
+    }
+  }
+}
+@include hover-ef {
+  .btn--primary:hover {
+    background: #C998FB;
+  }
+}
+.btn:focus {
+  background: #C998FB;
+  outline: none;
+}
+.btn--primary:focus {
+  border: 2px solid #7033AC;
+  outline: none;
+}
+.btn:active {
+  background: #7033AC;
+}
+.btn.is-disabled {
+  color: #999999;
+  background: #EAEAEA;
+}
+

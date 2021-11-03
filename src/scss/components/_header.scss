@@ -210,12 +210,15 @@
       order: 7;
     }
     &__search {
-      padding-top: 18px;
-      padding-bottom: 16px;
+      padding-top: 16px;
+      padding-bottom: 11px;
     }
     &__btn-search {
       right: 35%;
       top: 25%;
+    }
+    &__icon {
+      top: 34%;
     }
   }
   @include sm-tablet {
@@ -277,12 +280,17 @@
       grid-column-start: 5;
       grid-column-end: 2 span;
       order: 6;
+      margin-top: 3px;
     }
     &__forms {
       grid-column-start: 1;
       grid-column-end: 6 span;
       grid-template-columns: 69.5% 30.5%;
       order:7;
+    }
+    &__search {
+      padding-top: 14px;
+      padding-left: 57px;
     }
     &__btn-search {
       right: 35.5%;
@@ -317,7 +325,7 @@
   }
   @include mobile {
     padding-top: 12px;
-    padding-bottom: 15px;
+    padding-bottom: 18px;
     &::after {
       top: 0;
       height: 50px;
@@ -377,6 +385,7 @@
     }
     &__btn-search {
       right: 11%;
+      top: 8%;
     }
     &__menu {
       top: 144px;
@@ -386,6 +395,13 @@
     }
     &__menu.menu--active {
       max-height: none;
+    }
+    &__search {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    &__icon {
+      top: 12%;
     }
   }
 }
@@ -412,7 +428,7 @@
   }
   @include mobile {
     margin: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 }
 .submenu {
@@ -574,6 +590,9 @@
 .choices__item.is-selected {
   display: none;
 }
+.choices__list--dropdown {
+  z-index: 10;
+}
 .choices__list--dropdown .choices__item--selectable {
   padding: 7px 16px;
 }
@@ -643,6 +662,9 @@
     border-top: 1px solid $color-text-primary;
     border-left: 1px solid $color-text-primary;
     transform: rotate(-135deg);
+    @include larg {
+      top: 47%;
+    }
     @include sm-tablet {
       top: 49%;
     }
@@ -658,6 +680,12 @@
   border: 2px solid $grey-light;
   border-radius: 0px 10px 10px 0px;
   transition: border .3s ease-in-out, background .3s ease-in-out;
+  @include larg {
+    padding: 18px 28px!important;
+  }
+  @include sm-tablet {
+    padding: 16px 28px!important;
+  }
   @include lg-mobile {
     border-radius: 10px;
   }

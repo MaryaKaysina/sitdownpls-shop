@@ -19,6 +19,10 @@
   margin: 0;
   padding: 0;
 }
+@mixin p-reset {
+  margin: 0;
+  padding: 0;
+}
 @mixin font-playfair {
   font-family: "PlayfairDisplay", serif;
   font-weight: 900;

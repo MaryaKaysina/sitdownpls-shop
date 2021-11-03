@@ -1,0 +1,91 @@
+.swiper-slide {
+  padding: 80px 0;
+  max-height: 400px;
+  @include lg-mobile {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+}
+.swiper {
+  &__title {
+    @include p-reset;
+    margin-bottom: 49px;
+    width: 43%;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 65px;
+    color: $grey;
+    &--three {
+      color: $white;
+    }
+  }
+  &__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: $grey-light;
+    &--three {
+      background: $grey;
+    }
+  }
+  &__img {
+    height: 100%;
+    object-fit: cover;
+  }
+  @include larg {
+    &__title {
+      width: 58%;
+    }
+  }
+  @include tablet {
+    &__title {
+      width: 100%;
+    }
+  }
+  @include lg-mobile {
+    &__title {
+      margin-bottom: 158px;
+      font-size: calc(14px + 2vw);
+      line-height: 135%;
+    }
+    &__pic {
+      max-height: 210px;
+    }
+  }
+  @include mobile {
+    &__title {
+      margin-left: 17px;
+    }
+  }
+}
+.swiper-pagination.swiper-pagination--hero {
+  bottom: 21px;
+  @include larg {
+    bottom: 19px;
+  }
+  @include lg-mobile {
+    bottom: 46%;
+  }
+}
+.swiper-pagination--hero .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: $color-text;
+  opacity: .3;
+  @include lg-mobile {
+    width: 6px;
+    height: 6px;
+  }
+}
+.swiper-pagination--hero.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 8px;
+  @include lg-mobile {
+    margin: 0 4px;
+  }
+}
+.swiper-pagination--hero .swiper-pagination-bullet-active {
+  opacity: 1;
+}
