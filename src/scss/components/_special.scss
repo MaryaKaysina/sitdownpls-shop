@@ -1,0 +1,122 @@
+.special {
+  margin-bottom: 70px;
+}
+.container--special {
+  display: grid;
+  grid-gap: 26px;
+  grid-template-areas:
+  "title btn"
+  "slider slider";
+  @include sm-tablet {
+    grid-template-areas:
+    "title title title title title btn"
+    "slider slider slider slider slider slider";
+  }
+  @include lg-mobile {
+    grid-gap: 15px;
+    grid-template-areas:
+    "title"
+    "slider"
+    "btn";
+  }
+}
+.swiper {
+  width: 100%;
+  &-btn {
+    position: relative;
+    grid-area: btn;
+    display: flex;
+    justify-content: space-between;
+    justify-self: self-end;
+    width: 77px;
+    height: 32px;
+  }
+  &--special {
+    grid-area: slider;
+  }
+  &-btn__arrow {
+    & .circle {
+      fill: none;
+      stroke-width: 2;
+      stroke: $color-text-primary;
+    }
+    & .path {
+      fill: none;
+      stroke-width: 2;
+      stroke: $color-text-primary;
+    }
+    & * {
+      transition: all .3s ease-in-out;
+    }
+  }
+  @include lg-mobile {
+    &-btn {
+      justify-self: center;
+    }
+  }
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "";
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "";
+}
+.swiper-button-prev .swiper-btn__arrow {
+  transform: rotate(180deg);
+}
+.swiper-button-prev--special,
+.swiper-button-next--special {
+  right: auto;
+  left: auto;
+  top: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+.swiper-button-next--special {
+  right: 0;
+}
+.swiper-button-prev--special.swiper-button-disabled,
+.swiper-button-next--special.swiper-button-disabled {
+  opacity: 1;
+}
+.swiper-button-prev--special.swiper-button-disabled .circle,
+.swiper-button-next--special.swiper-button-disabled .circle,
+.swiper-button-prev--special.swiper-button-disabled .path,
+.swiper-button-next--special.swiper-button-disabled .path {
+  stroke: $grey;
+}
+@include hover-ef {
+  .swiper-button-prev--special:hover .circle,
+  .swiper-button-next--special:hover .circle {
+    fill: $color-text-primary;
+  }
+  .swiper-button-prev--special:hover .path,
+  .swiper-button-next--special:hover .path {
+    stroke: $white;
+  }
+}
+.swiper-button-prev--special:focus,
+.swiper-button-next--special:focus {
+  outline: none;
+}
+.swiper-button-prev--special:focus .circle,
+.swiper-button-next--special:focus .circle {
+  fill: $primary-light;
+  stroke: $color-text-primary;
+}
+.swiper-button-prev--special:focus .path,
+.swiper-button-next--special:focus .path {
+  stroke: $white;
+}
+.swiper-button-prev--special:active .circle,
+.swiper-button-next--special:active .circle {
+  fill: $primary-shade;
+  stroke: $primary-shade;
+}
+.swiper-button-prev--special:active .path,
+.swiper-button-next--special:active .path {
+  stroke: $white;
+}

@@ -79,6 +79,7 @@
   &__login {
     @include btn-reset;
     position: relative;
+    margin-right: 39px;
     &:after {
       content: "";
       position: absolute;
@@ -95,7 +96,6 @@
   &__basket {
     @include btn-reset;
     position: relative;
-    margin-left: 39px;
     &::before {
       content: "0";
       position: absolute;
@@ -145,6 +145,11 @@
     border-radius: 10px 0px 0px 10px;
     background: $grey-light;
     transition: background .3s ease-in-out, border .3s ease-in-out;
+  }
+  &__arrow {
+    fill: none;
+    stroke: $color-text-primary;
+    stroke-width: 2px;
   }
   &__icon {
     position: absolute;
@@ -422,6 +427,7 @@
   display: flex;
   align-items: center;
   margin-left: -10px;
+  width: max-content;
   &__icon {
     fill: $color-text-secondary;
     transition: fill .3s ease-in-out;

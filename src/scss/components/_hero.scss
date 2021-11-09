@@ -1,4 +1,10 @@
-.swiper-slide {
+.hero {
+  margin-bottom: 70px;
+  @include lg-mobile {
+    margin-bottom: 0;
+  }
+}
+.swiper-slide--hero {
   padding: 80px 0;
   max-height: 400px;
   @include lg-mobile {
@@ -27,7 +33,7 @@
     width: 100%;
     height: 100%;
     background: $grey-light;
-    &--three {
+    &--bg-gray {
       background: $grey;
     }
   }
