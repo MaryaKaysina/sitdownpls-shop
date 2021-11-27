@@ -1,0 +1,9 @@
+.container--rating {
+  display: flex;
+  flex-direction: column;
+}
+.rating {
+  &__cards {
+    margin-bottom: 32px;
+  }
+}

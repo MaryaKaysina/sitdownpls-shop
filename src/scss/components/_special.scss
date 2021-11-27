@@ -28,8 +28,6 @@
     display: flex;
     justify-content: space-between;
     justify-self: self-end;
-    width: 77px;
-    height: 32px;
   }
   &--special {
     grid-area: slider;
@@ -77,6 +75,10 @@
 }
 .swiper-button-next--special {
   right: 0;
+}
+.swiper-button-prev--special {
+  right: 0;
+  margin-right: 45px;
 }
 .swiper-button-prev--special.swiper-button-disabled,
 .swiper-button-next--special.swiper-button-disabled {

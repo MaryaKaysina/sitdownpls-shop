@@ -16,7 +16,7 @@ $(document).ready(function() {
   });
 
   const swiperSpecial = new Swiper('.swiper--special', {
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     slidesPerGroup: 1,
     navigation: {
       nextEl: '.swiper-button-next--special',
@@ -24,11 +24,9 @@ $(document).ready(function() {
     },
     breakpoints: {
       701: {
-        slidesPerView: 2,
         slidesPerGroup: 2,
       },
       993: {
-        slidesPerView: 3,
         slidesPerGroup: 3,
       },
     },

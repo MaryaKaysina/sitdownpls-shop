@@ -13,6 +13,18 @@
   }
 }
 .swiper {
+  &-slide--one {
+    background-color: $grey-light;
+    background: url("../img/hero/1-1920.png") no-repeat center / cover;
+  }
+  &-slide--two {
+    background-color: $grey-light;
+    background: url("../img/hero/2-1920.png") no-repeat center / cover;
+  }
+  &-slide--three {
+    background-color: $grey;
+    background: url("../img/hero/3-1920.png") no-repeat center / cover;
+  }
   &__title {
     @include p-reset;
     margin-bottom: 49px;
@@ -25,23 +37,16 @@
       color: $white;
     }
   }
-  &__pic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: $grey-light;
-    &--bg-gray {
-      background: $grey;
-    }
-  }
-  &__img {
-    height: 100%;
-    object-fit: cover;
-  }
   @include larg {
+    &-slide--one {
+      background: url("../img/hero/1-1024.png") no-repeat center / cover;
+    }
+    &-slide--two {
+      background: url("../img/hero/2-1024.png") no-repeat center / cover;
+    }
+    &-slide--three {
+      background: url("../img/hero/3-1024.png") no-repeat center / cover;
+    }
     &__title {
       width: 58%;
     }
@@ -52,16 +57,31 @@
     }
   }
   @include lg-mobile {
+    &-slide--one {
+      background: url("../img/hero/1-1920.png") top center / auto 56% no-repeat;
+    }
+    &-slide--two {
+      background: url("../img/hero/2-1920.png") top center / auto 56% no-repeat;
+    }
+    &-slide--three {
+      background: url("../img/hero/3-1920.png") top center / auto 56% no-repeat;
+    }
     &__title {
       margin-bottom: 158px;
       font-size: calc(14px + 2vw);
       line-height: 135%;
     }
-    &__pic {
-      max-height: 210px;
-    }
   }
   @include mobile {
+    &-slide--one {
+      background: url("../img/hero/1-320.png") top center / 100% 56% no-repeat;
+    }
+    &-slide--two {
+      background: url("../img/hero/2-320.png") top center / 100% 56% no-repeat;
+    }
+    &-slide--three {
+      background: url("../img/hero/3-320.png") top center / 100% 56% no-repeat;
+    }
     &__title {
       margin-left: 17px;
     }
