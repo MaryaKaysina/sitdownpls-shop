@@ -39,6 +39,9 @@ a {
   }
   @include sm-tablet {
     padding: 0 72px;
+    &--promo {
+      padding: 0 36px;
+    }
   }
   @include lg-mobile {
     padding: 0 15px;

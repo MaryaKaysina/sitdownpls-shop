@@ -1,0 +1,40 @@
+.promo {
+  @include bg-cover;
+  margin-bottom: 70px;
+  padding: 154px 0 150px;
+  background-color: $grey;
+  background-image: url("/img/promo/1.png");
+  &__title {
+    @include p-reset;
+    @include font-playfair;
+    font-size: 60px;
+    line-height: 120%;
+    color: $gold;
+  }
+  &__subtitle {
+    @include p-reset;
+    margin-bottom: 49px;
+    max-width: 500px;
+    font-size: 48px;
+    line-height: 120%;
+    color: $white;
+  }
+  @include lg-tablet {
+    padding: 154px 0 151px;
+  }
+  @include sm-tablet {
+    background-image: url("/img/promo/1-768.png");
+  }
+  @include mobile {
+    padding: 32px 0;
+    background: url("/img/promo/1-320.png") top center/100% 63% no-repeat;
+    &__title {
+      font-size: 24px;
+    }
+    &__subtitle {
+      margin-bottom: 144px;
+      max-width: 190px;
+      font-size: 16px;
+    }
+  }
+}

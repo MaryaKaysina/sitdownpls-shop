@@ -1,5 +1,8 @@
 .special {
   margin-bottom: 70px;
+  @include mobile {
+    margin-bottom: 103px;
+  }
 }
 .container--special {
   display: grid;
@@ -50,6 +53,11 @@
   @include lg-mobile {
     &-btn {
       justify-self: center;
+    }
+  }
+  @include mobile {
+    &-btn {
+      right: -38px;
     }
   }
 }

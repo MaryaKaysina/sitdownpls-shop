@@ -4,6 +4,12 @@
   }
 }
 
+@mixin lg-tablet {
+  @media (max-width: (1270px)) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: (1024px)) {
     @content;

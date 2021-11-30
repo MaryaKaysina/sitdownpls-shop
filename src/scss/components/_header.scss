@@ -554,7 +554,7 @@
         z-index: -1;
         width: 161px;
         height: 112px;
-        background: url('../img/sprite.svg#burger-logo') no-repeat;
+        background: url("../img/sprite.svg#burger-logo") no-repeat;
         @include mobile {
           display: none;
         }
@@ -724,7 +724,7 @@
 .choices__list--dropdown .choices__list--filter.choices__list--dropdown .choices__item--selectable {
   padding: 8px 30px;
 }
-.choices__list--dropdown .choices__item[data-value*='Категория'] {
+.choices__list--dropdown .choices__item[data-value*="Категория"] {
   display: none;
 }
 @include hover-ef {

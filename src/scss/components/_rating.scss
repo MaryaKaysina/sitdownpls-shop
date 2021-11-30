@@ -4,4 +4,7 @@
 }
 .rating {
   margin-bottom: 70px;
+  @include lg-mobile {
+    margin-bottom: 71px;
+  }
 }
