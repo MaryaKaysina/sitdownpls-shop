@@ -285,6 +285,10 @@
         height: 22vw;
       }
     }
+    &__img {
+      max-height: 100%;
+      width: auto;
+    }
   }
   @include mobile {
     &__list {
@@ -379,6 +383,78 @@
     }
   }
 }
+.swiper {
+  width: 100%;
+  &-btn {
+    position: relative;
+    grid-area: btn;
+    display: flex;
+    justify-content: space-between;
+    justify-self: self-end;
+  }
+  &--special,
+  &--useful {
+    grid-area: slider;
+  }
+  &-btn__arrow {
+    & .circle {
+      fill: none;
+      stroke-width: 2;
+      stroke: $color-text-primary;
+    }
+    & .path {
+      fill: none;
+      stroke-width: 2;
+      stroke: $color-text-primary;
+    }
+    & * {
+      transition: all .3s ease-in-out;
+    }
+  }
+  @include lg-mobile {
+    &-btn {
+      right: -38px;
+      justify-self: center;
+    }
+  }
+}
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "";
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "";
+}
+.swiper-button-prev .swiper-btn__arrow {
+  transform: rotate(180deg);
+}
+.swiper-button-prev,
+.swiper-button-next {
+  right: auto;
+  left: auto;
+  top: 0;
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+.swiper-button-next {
+  right: 0;
+}
+.swiper-button-prev {
+  right: 0;
+  margin-right: 45px;
+}
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 1;
+}
+.swiper-button-prev.swiper-button-disabled .circle,
+.swiper-button-next.swiper-button-disabled .circle,
+.swiper-button-prev.swiper-button-disabled .path,
+.swiper-button-next.swiper-button-disabled .path {
+  stroke: $grey;
+}
 @include hover-ef {
   .btn:hover {
     background: $color-text-primary;
@@ -389,6 +465,14 @@
   }
   .card__link:hover {
     color: $color-text-primary;
+  }
+  .swiper-button-prev:hover .circle,
+  .swiper-button-next:hover .circle {
+    fill: $color-text-primary;
+  }
+  .swiper-button-prev:hover .path,
+  .swiper-button-next:hover .path {
+    stroke: $white;
   }
 }
 .btn:focus {
@@ -417,4 +501,27 @@
 }
 .card__link:active {
   color: $primary-shade;
+}
+
+.swiper-button-prev:focus,
+.swiper-button-next:focus {
+  outline: none;
+}
+.swiper-button-prev:focus .circle,
+.swiper-button-next:focus .circle {
+  fill: $primary-light;
+  stroke: $color-text-primary;
+}
+.swiper-button-prev:focus .path,
+.swiper-button-next:focus .path {
+  stroke: $white;
+}
+.swiper-button-prev:active .circle,
+.swiper-button-next:active .circle {
+  fill: $primary-shade;
+  stroke: $primary-shade;
+}
+.swiper-button-prev:active .path,
+.swiper-button-next:active .path {
+  stroke: $white;
 }

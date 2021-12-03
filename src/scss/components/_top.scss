@@ -165,6 +165,7 @@
     }
   }
   @include mobile {
+    margin-bottom: 78px;
     &__list {
       gap: 32px 16px;
     }

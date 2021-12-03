@@ -23,11 +23,38 @@ $(document).ready(function() {
       prevEl: '.swiper-button-prev--special',
     },
     breakpoints: {
+      320: {
+        slidesPerGroup: 1,
+      },
       701: {
         slidesPerGroup: 2,
       },
       993: {
         slidesPerGroup: 3,
+      },
+    },
+  });
+
+  const swiperUseful = new Swiper('.swiper--useful', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 32,
+    navigation: {
+      nextEl: '.swiper-button-next--useful',
+      prevEl: '.swiper-button-prev--useful',
+    },
+    breakpoints: {
+      470: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      993: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      1025: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
       },
     },
   });

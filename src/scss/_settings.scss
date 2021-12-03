@@ -49,6 +49,25 @@ a {
   @include mobile {
     padding: 0 12px;
   }
+  &--slider {
+    display: grid;
+    grid-gap: 26px;
+    grid-template-areas:
+    "title btn"
+    "slider slider";
+    @include sm-tablet {
+      grid-template-areas:
+      "title title title title title btn"
+      "slider slider slider slider slider slider";
+    }
+    @include lg-mobile {
+      grid-gap: 15px;
+      grid-template-areas:
+      "title"
+      "slider"
+      "btn";
+    }
+  }
 }
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
