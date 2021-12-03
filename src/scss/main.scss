@@ -10,6 +10,8 @@
 @import "./components/special";
 @import "./components/rating";
 @import "./components/promo";
+@import "./components/top";
+@import "./components/useful";
 
 .title-hidden {
   position: absolute;
@@ -27,6 +29,9 @@
     width: max-content;
   }
   &--rating {
+    margin-bottom: 26px;
+  }
+  &--top {
     margin-bottom: 26px;
   }
   @include lg-mobile {
@@ -167,6 +172,7 @@
       right: -10px;
       z-index: -1;
       background: transparent;
+      transition: background .3s ease-in-out;
     }
   }
   &__price-sale {

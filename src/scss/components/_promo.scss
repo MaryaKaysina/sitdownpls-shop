@@ -26,6 +26,7 @@
     background-image: url("/img/promo/1-768.png");
   }
   @include mobile {
+    margin-bottom: 37px;
     padding: 32px 0;
     background: url("/img/promo/1-320.png") top center/100% 63% no-repeat;
     &__title {
