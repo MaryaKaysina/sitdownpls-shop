@@ -23,6 +23,9 @@
   margin: 0;
   padding: 0;
 }
+@mixin input-reset {
+  border: none;
+}
 @mixin font-playfair {
   font-family: "PlayfairDisplay", serif;
   font-weight: 900;

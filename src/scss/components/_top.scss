@@ -54,7 +54,7 @@
     line-height: 33px;
     color: $color-text;
   }
-  &__category .top__link-catalog {
+  &__category .top__icon {
     display: none;
   }
   &__pic {
@@ -93,7 +93,7 @@
     margin-left: 5px;
   }
   &__icon .circle {
-    fill: none;
+    fill: transparent;
     stroke-width: 2;
     stroke: $color-text-primary;
   }
@@ -103,7 +103,7 @@
     stroke: $color-text-primary;
   }
   &__icon * {
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
   @include lg-tablet {
     &__list {
@@ -189,13 +189,11 @@
       margin-right: 20px;
     }
     &__item:nth-child(4) .top__link-catalog {
-      align-self: end;
+      align-self: flex-end;
       margin-bottom: -5px;
       margin-right: 5px;
     }
     &__category {
-      display: flex;
-      align-items: center;
       margin-bottom: 16px;
     }
     &__item:first-child .top__category {
@@ -208,9 +206,14 @@
     &__link-catalog {
       display: none;
     }
-    &__category .top__link-catalog {
+    &__link {
+      display: flex;
+      align-items: center;
+    }
+    &__category .top__icon {
       display: inline;
       margin: 0;
+      margin-left: 5px;
       font-size: 0;
     }
     &__pic {

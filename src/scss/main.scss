@@ -12,6 +12,7 @@
 @import "./components/promo";
 @import "./components/top";
 @import "./components/useful";
+@import "./components/contacts";
 
 .title-hidden {
   position: absolute;
@@ -33,6 +34,9 @@
   }
   &--top {
     margin-bottom: 26px;
+  }
+  &--contacts {
+    margin-bottom: 9px;
   }
   @include lg-mobile {
     font-size: 24px;
@@ -128,7 +132,7 @@
   }
   &__pic {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     align-self: center;
     justify-content: center;
     margin-bottom: 16px;
@@ -359,6 +363,10 @@
   &--promo {
     padding: 20px 30px;
   }
+  &--contacts {
+    margin-bottom: 14px;
+    padding: 17px 32px;
+  }
   &--hide {
     display: none;
   }
@@ -372,6 +380,23 @@
     }
     &--promo {
       padding: 20px 30px;
+    }
+    &--contacts {
+      margin-bottom: 13px;
+      padding: 17px 32px;
+    }
+  }
+  @include sm-tablet {
+    &--contacts {
+      margin-bottom: 13px;
+      padding: 16px 32px;
+    }
+  }
+  @include lg-mobile {
+    &--contacts {
+      margin-bottom: 11px;
+      padding: 17px 32px;
+      width: auto;
     }
   }
   @include mobile {
@@ -455,6 +480,94 @@
 .swiper-button-next.swiper-button-disabled .path {
   stroke: $grey;
 }
+.popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgb(51 51 51 / .3);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out;
+  &__wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 118px 75px 122px;
+    width: 624px;
+    max-height: 100%;
+    height: auto;
+    border-radius: 10px;
+    background: #FFFFFF;
+    transform: scale(0) translate(-50%, -50%);
+    transform-origin: 0 0;
+    transition: transform .3s ease-in-out;
+  }
+  &__icon {
+    margin-bottom: 32px;
+  }
+  &__text {
+    @include p-reset;
+    text-align: center;
+    font-size: 32px;
+    line-height: 100%;
+    color: #333333;
+  }
+  &__close {
+    @include btn-reset;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      bottom: 0;
+      left: -2px;
+      right: -2px;
+      z-index: -1;
+      background: transparent;
+      transition: background .3s ease-in-out;
+    }
+  }
+  &__close-icon {
+    fill: #999999;
+    transition: fill .3s ease-in-out;
+  }
+  @include lg-mobile {
+    &__wrap {
+      padding: 60px 51px;
+      width: calc(100vw - 24px);
+    }
+    &__icon {
+      width: 73px;
+      height: 50px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__close {
+      top: 16px;
+      right: 16px;
+    }
+    &__close-icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+.popup.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.popup.is-active .popup__wrap{
+  transform: scale(1) translate(-50%, -50%);
+}
 @include hover-ef {
   .btn:hover {
     background: $color-text-primary;
@@ -473,6 +586,9 @@
   .swiper-button-prev:hover .path,
   .swiper-button-next:hover .path {
     stroke: $white;
+  }
+  .popup__close:hover .popup__close-icon {
+    fill: #A65CF0;
   }
 }
 .btn:focus {
@@ -524,4 +640,16 @@
 .swiper-button-prev:active .path,
 .swiper-button-next:active .path {
   stroke: $white;
+}
+.popup__close:focus {
+  outline: none;
+}
+.popup__close:focus .popup__close-icon {
+  fill: #7033AC;
+}
+.popup__close:focus::after {
+  background: #EBD1FF;
+}
+.popup__close:active .popup__close-icon {
+  fill: #7033AC;
 }

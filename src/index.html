@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/vendor.css">
   <link rel="stylesheet" href="css/main.css">
   <!-- JS -->
+  <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
   <script defer src="js/vendor.js"></script>
   <script defer src="js/main.js"></script>
 </head>
@@ -27,8 +29,10 @@
       @include('partials/promo.html')
       @include('partials/top.html')
       @include('partials/useful.html')
+      @include('partials/contacts.html')
     </main>
   </div>
+  @include('partials/popup.html')
 </body>
 
 </html>

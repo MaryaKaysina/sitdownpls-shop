@@ -1,5 +1,8 @@
 .useful-section {
   margin-bottom: 70px;
+  @include lg-tablet {
+    margin-bottom: 72px;
+  }
   @include mobile {
     margin-bottom: 103px;
   }
@@ -12,56 +15,22 @@
     border-radius: 10px;
     background-color: $grey-light;
     background-repeat: no-repeat;
-    &--bg-1 {
-      background-image: url("../img/useful/1.png");
-    }
-    &--bg-2 {
-      background-image: url("../img/useful/2.png");
-    }
-    &--bg-3 {
-      background-image: url("../img/useful/3.png");
-    }
-    &--bg-4 {
-      background-image: url("../img/useful/4.png");
-    }
-    &--bg-5 {
-      background-image: url("../img/useful/5.png");
-    }
+  }
+  &__pic {
+    margin: -30px;
+    margin-bottom: 25px;
   }
   &__text {
     @include p-reset;
     margin-bottom: 38px;
-    padding-top: 426px;
     font-size: 24px;
+    font-weight: 400;
     line-height: 33px;
     color: $color-text;
   }
   @include tablet {
-    &__item {
-      &--bg-1 {
-        background-image: url("../img/useful/1-1024.png");
-        background-size: 100% 202px;
-      }
-      &--bg-2 {
-        background-image: url("../img/useful/2-1024.png");
-        background-size: 100% 202px;
-      }
-      &--bg-3 {
-        background-image: url("../img/useful/3-1024.png");
-        background-size: 100% 202px;
-      }
-      &--bg-4 {
-        background-image: url("../img/useful/4-1024.png");
-        background-size: 100% 202px;
-      }
-      &--bg-5 {
-        background-image: url("../img/useful/5-1024.png");
-        background-size: 100% 202px;
-      }
-    }
     &__text {
       margin-bottom: 29px;
-      padding-top: 202px;
       font-size: 16px;
       line-height: 22px;
     }

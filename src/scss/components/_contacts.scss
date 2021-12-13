@@ -1,0 +1,154 @@
+.contacts {
+  margin-bottom: 70px;
+  &__text {
+    @include p-reset;
+    margin-bottom: 16px;
+    width: 48.75%;
+    font-size: 14px;
+    line-height: 19px;
+    color: #666666;
+  }
+  &__tool {
+    @include btn-reset;
+  }
+  &__tooltip {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  &__tooltip .circle {
+    fill: transparent;
+    stroke-width: 1;
+    stroke: #FF862F;
+  }
+  &__tooltip .path-1,
+  &__tooltip .path-2 {
+    fill: #FF862F;
+  }
+  &__tooltip * {
+    transition: all .3s ease-in-out;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 48.75%;
+  }
+  &__input {
+    @include input-reset;
+    margin-bottom: 30px;
+    padding: 6px 17px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: #F7F7F7;
+    font-size: 16px;
+    line-height: 40px;
+    transition: background .3s ease-in-out, border .3s ease-in-out;
+    &.is-success {
+      border: 1px solid #B8EC64;
+    }
+  }
+  &__input::placeholder {
+    color: #999999;
+  }
+  &__link {
+    position: relative;
+    font-size: inherit;
+    line-height: inherit;
+    text-decoration-line: underline;
+    color: #A65CF0;
+    transition: color .3s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -2px;
+      right: -2px;
+      z-index: -1;
+      background: transparent;
+      transition: background .3s ease-in-out;
+    }
+  }
+  @include lg-tablet {
+    &__text,
+    &__form {
+      width: 42.58%;
+    }
+  }
+  @include sm-tablet {
+    &__text,
+    &__form {
+      width: 64.9%;
+    }
+  }
+  @include lg-mobile {
+    &__text,
+    &__form {
+      width: 100%;
+    }
+  }
+}
+.custom-checkbox {
+  @include custom-checkbox;
+}
+.tippy-box {
+  border-radius: 0;
+}
+.tippy-content {
+  padding: 5px;
+  max-width: 157px;
+  text-align: center;
+  font-size: 9px;
+  line-height: 14px;
+}
+.js-validate-error-label {
+  position: relative;
+  top: -85px;
+  left: 18px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FF6972!important;
+}
+.js-validate-error-field {
+  margin-bottom: 14px;
+  border: 1px solid #FF6972!important;
+  color: #333333!important;
+}
+input:-internal-autofill-selected {
+  background: #F7F7F7;background: #F7F7F7!important;
+}
+@include hover-ef {
+  .contacts__tool:hover .circle {
+    fill: #FF862F;
+  }
+  .contacts__tool:hover .path-1,
+  .contacts__tool:hover .path-2 {
+    fill: #fff;
+  }
+  .contacts__input:hover {
+    background: #EAEAEA;
+  }
+  .contacts__link:hover {
+    color: $primary-shade;
+  }
+}
+.contacts__tool:focus {
+  outline: none;
+}
+.contacts__tool:focus .circle {
+  fill: #FF862F;
+}
+.contacts__tool:focus .path-1,
+.contacts__tool:focus .path-2 {
+  fill: #fff;
+}
+.contacts__input:focus {
+  border: 1px solid #A65CF0;
+  background: #F8EFFF;
+  outline: none;
+}
+.contacts__link:focus {
+  outline: none;
+}
+.contacts__link:focus::after {
+  background: $pink-violet;
+}

@@ -12,6 +12,10 @@ body {
   font-weight: 400;
   color: $color-text;
 }
+body.is-popup {
+  overflow: hidden;
+  position: relative;
+}
 img {
   width: 100%;
   max-width: 100%;
@@ -66,6 +70,22 @@ a {
       "title"
       "slider"
       "btn";
+    }
+  }
+  &--contacts {
+    background: url("../img/contacts/bg-img.png") no-repeat;
+    background-position: right 2% center;
+    @include lg-tablet {
+      background-image: url("../img/contacts/bg-img-1024.png");
+      background-position: right 7% center;
+    }
+    @include sm-tablet {
+      background-image: url("../img/contacts/bg-img-768.png");
+      background-position: right 12% center;
+      background-size: auto 94%;
+    }
+    @include lg-mobile {
+      background: none;
     }
   }
 }
