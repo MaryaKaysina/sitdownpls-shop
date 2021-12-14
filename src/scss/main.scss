@@ -13,6 +13,7 @@
 @import "./components/top";
 @import "./components/useful";
 @import "./components/contacts";
+@import "./components/footer";
 
 .title-hidden {
   position: absolute;
@@ -503,7 +504,7 @@
     max-height: 100%;
     height: auto;
     border-radius: 10px;
-    background: #FFFFFF;
+    background: $white;
     transform: scale(0) translate(-50%, -50%);
     transform-origin: 0 0;
     transition: transform .3s ease-in-out;
@@ -516,7 +517,7 @@
     text-align: center;
     font-size: 32px;
     line-height: 100%;
-    color: #333333;
+    color: $color-text;
   }
   &__close {
     @include btn-reset;
@@ -536,7 +537,7 @@
     }
   }
   &__close-icon {
-    fill: #999999;
+    fill: $grey;
     transition: fill .3s ease-in-out;
   }
   @include lg-mobile {
@@ -588,7 +589,7 @@
     stroke: $white;
   }
   .popup__close:hover .popup__close-icon {
-    fill: #A65CF0;
+    fill: $color-text-primary;
   }
 }
 .btn:focus {
@@ -645,11 +646,11 @@
   outline: none;
 }
 .popup__close:focus .popup__close-icon {
-  fill: #7033AC;
+  fill: $primary-shade;
 }
 .popup__close:focus::after {
-  background: #EBD1FF;
+  background: $pink-violet;
 }
 .popup__close:active .popup__close-icon {
-  fill: #7033AC;
+  fill: $primary-shade;
 }

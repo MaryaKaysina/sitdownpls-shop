@@ -17,7 +17,7 @@ const renderCards = (cards, count, countView, container) => {
         <div class="card__price-wrap">
           <span class="card__price">${card.price}</span>
         </div>
-        <button class="btn btn--card btn--card-rating">Купить</button>
+        <button class="btn btn--card btn--card-rating" aria-label="${card.aria}">Купить</button>
       </article>
       `;
       container.append(cardItem);

@@ -88,6 +88,23 @@ a {
       background: none;
     }
   }
+  &--footer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0 30px;
+    @include lg-tablet {
+      grid-template-columns: repeat(9, 1fr);
+      padding-right: 39px;
+    }
+    @include sm-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 22px 30px;
+      padding: 0 72px;
+    }
+    @include mobile {
+      padding: 0 12px;
+    }
+  }
 }
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;

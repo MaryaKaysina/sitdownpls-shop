@@ -1,0 +1,219 @@
+.footer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: $md-grey;
+  &__logo {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+  &__social {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    align-self: flex-end;
+  }
+  &__nav {
+    grid-column: 5 / span 8;
+    grid-row: 1 / span 2;
+  }
+  @include lg-tablet {
+    padding-top: 26px;
+    &__nav {
+      grid-column: 3 / span 7;
+    }
+  }
+  @include sm-tablet {
+    &__logo {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 1;
+      justify-self: flex-start;
+    }
+    &__social {
+      grid-column: 4 / span 3;
+      grid-row: 1 / span 1;
+      justify-self: flex-end;
+    }
+    &__nav {
+      grid-column: 1 / span 6;
+      grid-row: 2 / span 1;
+    }
+  }
+  @include lg-mobile {
+    &__logo {
+      grid-column: 1 / span 6;
+      grid-row: 1 / span 1;
+      justify-self: center;
+    }
+    &__social {
+      grid-column: 1 / span 6;
+      grid-row: 2 / span 1;
+      justify-self: center;
+    }
+    &__nav {
+      grid-column: 1 / span 6;
+      grid-row: 3 / span 1;
+    }
+  }
+  @include mobile {
+    padding-top: 23px;
+  }
+}
+.social {
+  @include list-reset;
+  display: flex;
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  &__link {
+    position: relative;
+    z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -16px;
+      bottom: 2px;
+      left: -3px;
+      right: -3px;
+      z-index: -1;
+      background: transparent;
+      transition: background .3s ease-in-out;
+    }
+  }
+  &__icon {
+    fill: $grey;
+    transition: fill .3s ease-in-out;
+  }
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  &__list {
+    @include list-reset;
+  }
+  &__list:nth-child(1){
+    margin-right: -2%;
+  }
+  &__list:nth-child(2){
+    margin-right: 0;
+  }
+  &__list:nth-child(3){
+    margin-right: 2%;
+  }
+  &__item {
+    font-size: 16px;
+    line-height: 100%;
+    color: $color-text;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+  &__link {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    line-height: 100%;
+    color: $grey;
+    transition: color .3s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      bottom: -1px;
+      left: -10px;
+      right: -10px;
+      z-index: -1;
+      background: transparent;
+      transition: background .3s ease-in-out;
+    }
+  }
+  @include lg-tablet {
+    &__item:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+  @include sm-tablet {
+    &__list:nth-child(1){
+      margin-right: -3%;
+    }
+    &__list:nth-child(3){
+      margin-right: 3%;
+    }
+  }
+  @include lg-mobile {
+    flex-wrap: wrap;
+    &__list {
+      width: 50%;
+      text-align: center;
+    }
+    &__list:nth-child(1){
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+    &__list:nth-child(2){
+      margin-bottom: 24px;
+    }
+    &__list:nth-child(3){
+      margin-right: 0;
+    }
+  }
+  @include mobile {
+    &__list {
+      width: 47%;
+      text-align: inherit;
+    }
+    &__list:nth-child(1){
+      margin-bottom: 27px;
+    }
+    &__list:nth-child(2){
+      margin-bottom: 27px;
+    }
+  }
+}
+.copyright {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 19px;
+  color: $grey;
+  background: $grey-light;
+  &__text:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+@include hover-ef {
+  .social__link:hover .social__icon {
+    fill: $color-text-primary;
+  }
+  .nav__link:hover {
+    color: $color-text-primary;
+  }
+}
+.footer__logo:focus,
+.social__link:focus,
+.nav__link:focus {
+  outline: none;
+}
+.social__link:focus .social__icon {
+  fill: $white;
+}
+.social__link:focus::after {
+  background: $primary-light;
+}
+.social__link:active::after {
+  background: transparent;
+}
+.social__link:active .social__icon {
+  fill: $primary-shade;
+}
+.nav__link:focus::after {
+  background: $pink-violet;
+}
+.nav__link:focus {
+  color: $primary-shade;
+}
+.nav__link:active {
+  color: $primary-shade;
+}
+.nav__link:active::after {
+  background: transparent;
+}

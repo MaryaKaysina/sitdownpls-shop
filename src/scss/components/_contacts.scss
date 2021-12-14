@@ -6,7 +6,7 @@
     width: 48.75%;
     font-size: 14px;
     line-height: 19px;
-    color: #666666;
+    color: $grey-shade;
   }
   &__tool {
     @include btn-reset;
@@ -18,11 +18,11 @@
   &__tooltip .circle {
     fill: transparent;
     stroke-width: 1;
-    stroke: #FF862F;
+    stroke: $color-text-secondary;
   }
   &__tooltip .path-1,
   &__tooltip .path-2 {
-    fill: #FF862F;
+    fill: $color-text-secondary;
   }
   &__tooltip * {
     transition: all .3s ease-in-out;
@@ -38,23 +38,23 @@
     padding: 6px 17px;
     border-radius: 10px;
     border: 1px solid transparent;
-    background: #F7F7F7;
+    background: $grey-light;
     font-size: 16px;
     line-height: 40px;
     transition: background .3s ease-in-out, border .3s ease-in-out;
     &.is-success {
-      border: 1px solid #B8EC64;
+      border: 1px solid $green-input;
     }
   }
   &__input::placeholder {
-    color: #999999;
+    color: $grey;
   }
   &__link {
     position: relative;
     font-size: inherit;
     line-height: inherit;
     text-decoration-line: underline;
-    color: #A65CF0;
+    color: $color-text-primary;
     transition: color .3s ease-in-out;
     &::after {
       content: "";
@@ -106,26 +106,23 @@
   left: 18px;
   font-size: 12px;
   line-height: 16px;
-  color: #FF6972!important;
+  color: $red-input!important;
 }
 .js-validate-error-field {
   margin-bottom: 14px;
-  border: 1px solid #FF6972!important;
-  color: #333333!important;
-}
-input:-internal-autofill-selected {
-  background: #F7F7F7;background: #F7F7F7!important;
+  border: 1px solid $red-input!important;
+  color: $color-text!important;
 }
 @include hover-ef {
   .contacts__tool:hover .circle {
-    fill: #FF862F;
+    fill: $color-text-secondary;
   }
   .contacts__tool:hover .path-1,
   .contacts__tool:hover .path-2 {
-    fill: #fff;
+    fill: $white;
   }
   .contacts__input:hover {
-    background: #EAEAEA;
+    background: $md-grey;
   }
   .contacts__link:hover {
     color: $primary-shade;
@@ -135,15 +132,15 @@ input:-internal-autofill-selected {
   outline: none;
 }
 .contacts__tool:focus .circle {
-  fill: #FF862F;
+  fill: $color-text-secondary;
 }
 .contacts__tool:focus .path-1,
 .contacts__tool:focus .path-2 {
-  fill: #fff;
+  fill: $white;
 }
 .contacts__input:focus {
-  border: 1px solid #A65CF0;
-  background: #F8EFFF;
+  border: 1px solid $color-text-primary;
+  background: $pink-light;
   outline: none;
 }
 .contacts__link:focus {
