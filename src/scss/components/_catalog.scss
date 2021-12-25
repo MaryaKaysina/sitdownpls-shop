@@ -1,0 +1,115 @@
+.catalog {
+  &__wrapper {
+    display: grid;
+    grid-template-areas:
+      "breadcrumbs breadcrumbs breadcrumbs breadcrumbs"
+      "filter couch couch couch";
+      margin-bottom: 70px;
+  }
+  &__title {
+    @include p-reset;
+    grid-area: title;
+    width: max-content;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    color: #333333;
+  }
+  &__tags {
+    @include list-reset;
+    grid-area: tags;
+  }
+  &__btns {
+    @include list-reset;
+    grid-area: btns;
+    justify-self: center;
+  }
+  &__cards {
+    grid-area: cards;
+  }
+  &__wrap--grid {
+    display: grid;
+    grid-template-areas:
+    "title tags"
+    "cards cards"
+    "btns btns";
+    align-items: baseline;
+    justify-content: flex-start;
+    grid-template-columns: 109px auto;
+  }
+}
+.breadcrumbs {
+  grid-area: breadcrumbs;
+}
+.catalog__wrap:nth-child(2) {
+  grid-area: filter;
+  margin-right: 32px;
+}
+.catalog__wrap:last-child {
+  grid-area: couch;
+}
+.tag {
+  display: flex;
+  margin-bottom: 24px;
+  &__item {
+    position: relative;
+    padding: 7px 27px 7px 9px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 130%;
+    color: #666666;
+    &--category {
+      background: #DAFFD1;
+    }
+    &--price {
+      background: #FFF5D1;
+    }
+    &--sale {
+      background: #EBD1FF;
+    }
+    &--color {
+      background: #EAEAEA;
+    }
+  }
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  &__close {
+    @include btn-reset;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 40%;
+      right: 10%;
+      width: 13px;
+      height: 13px;
+      background: url("../img/sprite.svg#close") no-repeat;
+    }
+  }
+}
+.btns {
+  display: flex;
+  &__item {
+    padding: 6px 9px;
+    border: 2px solid #A65CF0;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+  &__btn {
+    @include btn-reset;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #A65CF0;
+  }
+  &__item.is-active {
+    border-color: transparent;
+    background: #7033AC;
+  }
+  &__item.is-active .btns__btn {
+    color: #FFFFFF;
+  }
+}

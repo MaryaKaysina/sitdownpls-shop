@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // let text;
   const regions = document.querySelector('.header__select');
   const filter = document.querySelector('.header__filter');
 

@@ -89,22 +89,22 @@
   &__list {
     @include list-reset;
   }
-  &__list:nth-child(1){
+  &__wrap:nth-child(1) {
     margin-right: -2%;
   }
-  &__list:nth-child(2){
-    margin-right: 0;
-  }
-  &__list:nth-child(3){
+  &__wrap:nth-child(3) {
     margin-right: 2%;
   }
-  &__item {
+  &__title {
+    @include p-reset;
+    margin-bottom: 5px;
     font-size: 16px;
+    font-weight: normal;
     line-height: 100%;
     color: $color-text;
   }
   &__item:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   &__link {
     position: relative;
@@ -127,44 +127,44 @@
   }
   @include lg-tablet {
     &__item:not(:last-child) {
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }
   }
   @include sm-tablet {
-    &__list:nth-child(1){
+    &__wrap:nth-child(1){
       margin-right: -3%;
     }
-    &__list:nth-child(3){
+    &__wrap:nth-child(3){
       margin-right: 3%;
     }
   }
   @include lg-mobile {
     flex-wrap: wrap;
-    &__list {
+    &__wrap {
       width: 50%;
       text-align: center;
     }
-    &__list:nth-child(1){
+    &__wrap:nth-child(1){
       margin-right: 0;
       margin-bottom: 24px;
     }
-    &__list:nth-child(2){
+    &__wrap:nth-child(2){
       margin-bottom: 24px;
     }
-    &__list:nth-child(3){
+    &__wrap:nth-child(3){
       margin-right: 0;
     }
   }
   @include mobile {
-    &__list {
+    &__wrap {
       width: 47%;
       text-align: inherit;
     }
-    &__list:nth-child(1){
-      margin-bottom: 27px;
+    &__wrap:nth-child(1){
+      margin-bottom: 25px;
     }
-    &__list:nth-child(2){
-      margin-bottom: 27px;
+    &__wrap:nth-child(2){
+      margin-bottom: 25px;
     }
   }
 }

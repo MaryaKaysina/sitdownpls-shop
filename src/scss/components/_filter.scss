@@ -1,0 +1,23 @@
+.filter {
+  &__title {
+    @include p-reset;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 130%;
+    color: #333333;
+  }
+  &__subtitle {
+    @include p-reset;
+    margin-bottom: 9px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #666666;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 26px;
+  }
+}

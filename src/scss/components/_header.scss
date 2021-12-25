@@ -263,14 +263,12 @@
       padding-left: 72px;
       padding-bottom: 19px;
       width: 100%;
-      height: 0;
       background: $white;
       opacity: 0;
       visibility: hidden;
-      transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+      transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
     }
     &__menu.menu--active {
-      height: auto;
       max-height: 300px;
       opacity: 1;
       visibility: visible;
@@ -369,8 +367,9 @@
     }
     &__submenu {
       position: absolute;
-      top: 569px;
+      top: 568px;
       left: 0;
+      z-index: 10;
       padding: 21px 12px 13px;
       background: $grey-light;
       opacity: 0;
@@ -378,8 +377,6 @@
       transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
     }
     &__submenu.submenu--active {
-      height: auto;
-      max-height: 320px;
       opacity: 1;
       visibility: visible;
     }

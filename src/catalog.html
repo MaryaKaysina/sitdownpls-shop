@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Каталог</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/vendor.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- JS -->
+  <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script defer src="/js/vendor.js"></script>
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body class="catalog">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main>
+      <h1 class="site-title title-hidden">Каталог</h1>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link is-active">/ Каталог</a></li>
+          </ul>
+        </div>
+      </nav>
+      @include('partials/cards.html')
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>
