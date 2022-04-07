@@ -578,7 +578,6 @@
   transform: scale(1) translate(-50%, -50%);
 }
 .breadcrumbs {
-  margin-bottom: 32px;
   &__list {
     @include list-reset;
     display: flex;
@@ -597,6 +596,11 @@
     &.is-active {
       color: #7033AC;
     }
+  }
+}
+.catalog-main .breadcrumbs {
+  &__list {
+    margin-bottom: 32px;
   }
 }
 @include hover-ef {
