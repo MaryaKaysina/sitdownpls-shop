@@ -9,19 +9,28 @@
   }
   &__subtitle {
     @include p-reset;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
     font-size: 16px;
     font-weight: 600;
     line-height: 130%;
     color: #666666;
+    &--price {
+      margin-bottom: 2px;
+    }
   }
   &__wrap {
     display: flex;
     flex-direction: column;
     margin-bottom: 26px;
+    &--price {
+      margin-bottom: 37px;
+    }
+    &--sale {
+      margin-bottom: 17px;
+    }
   }
   &__checkbox {
-    margin-bottom: 10px;
+    margin-bottom: 11px;
     &:last-child {
       margin-bottom: 9px;
     }
@@ -37,7 +46,7 @@
 .input {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 11px;
+  margin-bottom: 9px;
   &__wrap:last-child {
     text-align: end;
   }
@@ -56,7 +65,7 @@
     color: #666666;
   }
   &__text {
-    margin-right: 9px;
+    margin-right: 5px;
   }
 }
 input[type="number"]::-webkit-outer-spin-button,
@@ -109,4 +118,75 @@ input[type="search"]::-webkit-search-results-decoration {
   position: relative;
   height: 100%;
   background: #A65CF0;
+}
+.filter-lg .filter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  & .filter__wrapper {
+    position: relative;
+    z-index: 100;
+  }
+  & .filter__wrap {
+    position: absolute;
+    top: 25px;
+    z-index: 10;
+    display: none;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    width: 187px;
+    border: 1px solid #EAEAEA;
+    border-radius: 0px 0px 10px 10px;
+    background: #FFFFFF;
+  }
+  & .filter__wrap.is-active {
+    display: flex;
+  }
+  & .filter__title {
+    margin: 0;
+    margin-right: 43px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: #333333;
+  }
+  & .filter__subtitle:not(:last-child) {
+    margin-right: 32px;
+  }
+  & .filter__subtitle {
+    position: relative;
+    z-index: 100;
+    margin: 0;
+    padding: 9px 15px;
+    min-width: 187px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: #F7F7F7;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #333333;
+    text-align: inherit;
+  }
+  & .filter__subtitle.is-active {
+    border: 2px solid #7033AC;
+    background: #FFFFFF;
+  }
+  & .filter__subtitle.is-active::after {
+    transform: translate(0, 4px) rotate(45deg);
+  }
+  & .filter__subtitle::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+    right: 16px;
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-top: 1px solid #A65CF0;
+    border-left: 1px solid #A65CF0;
+    transform: rotate(-135deg);
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
 }

@@ -33,10 +33,13 @@
                 <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link is-active">/ Прямые диваны</a></li>
               </ul>
           </nav>
-          <div class="catalog__wrap">
+          <aside class="catalog__wrap catalog__wrap--aside">
             @include('partials/filter.html')
-          </div>
+          </aside>
           <div class="catalog__wrap catalog__wrap--grid">
+            <div class="catalog__filter-lg filter-lg">
+              @include('partials/filter-lg.html')
+            </div>
             @include('partials/cards-couch.html')
           </div>
         </div>

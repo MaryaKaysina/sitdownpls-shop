@@ -16,7 +16,7 @@ if (catalog) {
     e.preventDefault();
   });
 
-  search.addEventListener('change', (e) => {
+  search.addEventListener('input', (e) => {
     e.preventDefault();
     searchCards(search.value);
   });
@@ -27,7 +27,7 @@ if (catalog) {
       filterListSearch.push(cardsList.filter(card => card.title.toLowerCase().indexOf(str.toLowerCase()) > -1));
       let searchStr = filterListSearch.flat();
       if(searchStr.length !== 0) {
-        checkWidth(filterListSearch);
+        checkWidth(searchStr);
       }
     } else {
       checkWidth(cardsList);
@@ -40,6 +40,10 @@ if (catalog) {
     let filterListColor = [];
     let filterListPrice = [];
     newCardList = [];
+
+    if(filterPrice.value.length != 0) {
+      filterList.push(filterPrice.value);
+    }
 
     filterList.forEach(filter => {
       filterListCategory.push(cardsList.filter(card => card.category === filter));
@@ -54,7 +58,6 @@ if (catalog) {
     let price = filterListPrice.flat();
 
     let maxArr = Math.max(category.length, sale.length, color.length, price.length);
-
     if (category.length === maxArr) {
       newCardList = category;
       if (color.length !== 0) {
@@ -116,7 +119,6 @@ if (catalog) {
     filters.forEach(filter => {
       if(filter.checked) {
         filterList.push(filter.value);
-        filterList.push(filterPrice.value);
       }
     })
 
@@ -132,7 +134,7 @@ if (catalog) {
   function checkWidth(list) {
     let width = window.innerWidth;
 
-    if (width > 1270) {
+    if (width > 900) {
       renderCards(list, list.length, 9, cardsListCatalog);
 
       btns.forEach(btn => {
@@ -140,7 +142,7 @@ if (catalog) {
         if (list.length / 9 >= 1) btn.classList.remove('btn--hide');
       });
     };
-    if (width <= 1270) {
+    if (width <= 900) {
       renderCards(list, list.length, 6, cardsListCatalog);
 
       btns.forEach(btn => {

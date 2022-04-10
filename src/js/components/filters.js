@@ -14,7 +14,7 @@ $( function() {
     let addTagsPrice = [];
     const oldTagsPrice = document.querySelectorAll('.tag__item--price');
 
-    oldTagsPrice.forEach( e => e.remove() );
+    oldTagsPrice.forEach( e => e.remove());
 
     if(maxPrice.value > 0) {
       addTagsPrice.push(`До ${maxPrice.value}`);
@@ -70,6 +70,8 @@ $( function() {
     })
 
     // price tags
+    changeMaxPrice();
+
     sliderRange.addEventListener('click', () => {
       changeMaxPrice();
     })
