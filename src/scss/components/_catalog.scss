@@ -257,7 +257,7 @@
   padding-left: 32px;
   font-size: 16px;
   line-height: 130%;
-  & .filter__label--short-price {
+  & .filter__label-short {
     display: none;
   }
   @include mobile {
@@ -267,10 +267,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    & .filter__label--short-price {
+    & .filter__label-short {
       display: inline;
     }
-    & .filter__label--long-price {
+    & .filter__label-long {
       display: none;
     }
   }

@@ -258,11 +258,15 @@ input[type="search"]::-webkit-search-results-decoration {
     & .filter__block:not(:last-child) {
       margin-right: 0;
     }
+    & .filter__wrapper {
+      width: 48%;
+    }
     & .filter__wrapper:not(:last-child) {
       margin-right: 0;
     }
     & .filter__subtitle {
       min-width: 140px;
+      width: 100%;
     }
     & .filter__wrap {
       padding-left: 15px;
