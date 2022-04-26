@@ -1,14 +1,26 @@
 $( function() {
+  const aside = document.querySelector('.catalog__wrap--aside');
+  const filterLg = document.querySelector('.catalog__filter-lg');
+  const filterMain = document.querySelector('.filter--main');
+  const filterAdd = document.querySelector('.filter--add');
   const containerTags = document.querySelector('.catalog__tags');
   const filters = document.querySelectorAll('.filter__wrap input');
-  const filterCategory = document.querySelectorAll('.filter__checkbox--category');
-  const filterSale = document.querySelectorAll('.filter__checkbox--sale');
-  const filterColor = document.querySelectorAll('.filter__checkbox--color');
+
   const filterInputs = document.querySelectorAll('.input__price');
   const sliderRange = document.getElementById('slider-range');
   const sliderHandle = document.querySelectorAll('.ui-slider-handle');
   const minPrice = document.querySelector('.input__price--min');
   const maxPrice = document.querySelector('.input__price--max');
+
+  function toggleFilterMain() {
+    if(window.innerWidth <= 1270) {
+      filterMain.remove();
+      filterLg.prepend(filterAdd);
+    } else {
+      aside.prepend(filterMain);
+      filterAdd.remove();
+    }
+  }
 
   function changeMaxPrice() {
     let addTagsPrice = [];
@@ -47,6 +59,12 @@ $( function() {
   }
 
   function createTags() {
+    toggleFilterMain();
+
+    const filterCategory = document.querySelectorAll('.filter__checkbox--category');
+    const filterSale = document.querySelectorAll('.filter__checkbox--sale');
+    const filterColor = document.querySelectorAll('.filter__checkbox--color');
+
     let addTagsCategory = [];
     let addTagsSale = [];
     let addTagsColor = [];
@@ -140,10 +158,14 @@ $( function() {
   createTags();
   deleteTags();
 
+  window.addEventListener('resize', () => {
+    toggleFilterMain();
+    deleteTags();
+  });
+
   filters.forEach(filter => {
     filter.addEventListener('change', () => {
       createTags();
-      changeMaxPrice();
       deleteTags();
     })
   })

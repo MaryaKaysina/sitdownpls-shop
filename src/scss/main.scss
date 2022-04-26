@@ -251,6 +251,12 @@
         grid-gap: 32px;
         margin-bottom: 33px;
       }
+      &--catalog {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 32px;
+        margin-bottom: 32px;
+      }
     }
     &__item {
       width: 47.4%;
@@ -310,6 +316,12 @@
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 16px;
         margin-bottom: 33px;
+      }
+      &--catalog {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+        margin-bottom: 32px;
       }
     }
     &__item {
@@ -377,7 +389,7 @@
     padding: 17px 32px;
   }
   &--hide {
-    display: none;
+    display: none!important;
   }
   @include lg-tablet {
     padding: 17px 33px;
@@ -585,7 +597,7 @@
   &__item {
     font-size: 14px;
     line-height: 100%;
-    color: #999999;
+    color: $grey;
   }
   &__item:not(:last-child) {
     margin-right: 6px;
@@ -594,7 +606,7 @@
     font-size: inherit;
     color: inherit;
     &.is-active {
-      color: #7033AC;
+      color: $primary-shade;
     }
   }
 }

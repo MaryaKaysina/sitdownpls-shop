@@ -1,6 +1,10 @@
 const catalog = document.querySelector('.catalog');
 
 if (catalog) {
+  const aside = document.querySelector('.catalog__wrap--aside');
+  const filterLg = document.querySelector('.catalog__filter-lg');
+  const filterMain = document.querySelector('.filter--main');
+  const filterAdd = document.querySelector('.filter--add');
   const cardsList = JSON.parse(localStorage.getItem('cards'));
   const cardsListCatalog = document.querySelector('.card__list');
   const addCardsBtn = document.querySelector('.catalog__btns');
@@ -11,6 +15,16 @@ if (catalog) {
   const searchBtn = document.querySelector('.header__btn-search');
   let newCardList = [];
   let filterList = [];
+
+  function toggleFilterMain() {
+    if(window.innerWidth <= 1270) {
+      filterMain.remove();
+      filterLg.prepend(filterAdd);
+    } else {
+      aside.prepend(filterMain);
+      filterAdd.remove();
+    }
+  }
 
   searchBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -56,6 +70,11 @@ if (catalog) {
     let sale = filterListSale.flat();
     let color = filterListColor.flat();
     let price = filterListPrice.flat();
+
+    category = [...new Set(category)];
+    sale = [...new Set(sale)];
+    color = [...new Set(color)];
+    price = [...new Set(price)];
 
     let maxArr = Math.max(category.length, sale.length, color.length, price.length);
     if (category.length === maxArr) {
@@ -134,7 +153,7 @@ if (catalog) {
   function checkWidth(list) {
     let width = window.innerWidth;
 
-    if (width > 900) {
+    if (width > 992) {
       renderCards(list, list.length, 9, cardsListCatalog);
 
       btns.forEach(btn => {
@@ -142,7 +161,7 @@ if (catalog) {
         if (list.length / 9 >= 1) btn.classList.remove('btn--hide');
       });
     };
-    if (width <= 900) {
+    if (width <= 992) {
       renderCards(list, list.length, 6, cardsListCatalog);
 
       btns.forEach(btn => {
@@ -154,9 +173,26 @@ if (catalog) {
     const cards = document.querySelectorAll('.catalog .card__wrap');
 
     addCardsBtn.addEventListener('click', (event) => {
-      cards.forEach(card => {
+      cards.forEach((card, i) => {
         if(card.classList.contains('card__wrap--hide')) {
-          card.classList.remove('card__wrap--hide');
+          if (width > 992) card.classList.remove('card__wrap--hide');
+          if (width <= 992) {
+            if(event.path[0].innerText == 1) {
+              if (i + 1 > 0 && i + 1 < 7) {
+                card.classList.remove('card__wrap--hide');
+              }
+            }
+            if(event.path[0].innerText == 2) {
+              if (i + 1 > 6 && i + 1 < 13) {
+                card.classList.remove('card__wrap--hide');
+              }
+            }
+            if(event.path[0].innerText == 3) {
+              if (i + 1 > 12 && i + 1 < 19) {
+                card.classList.remove('card__wrap--hide');
+              }
+            }
+          }
         } else {
           card.classList.add('card__wrap--hide');
         }
@@ -182,4 +218,8 @@ if (catalog) {
       filterCheck();
     })
   })
+
+  window.addEventListener('resize', () => {
+    filterCheck();
+  });
 }

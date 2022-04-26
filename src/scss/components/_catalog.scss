@@ -16,7 +16,7 @@
     font-weight: normal;
     font-size: 24px;
     line-height: 130%;
-    color: #333333;
+    color: $color-text;
   }
   &__tags {
     @include list-reset;
@@ -75,37 +75,78 @@
       "cards cards"
       "btns btns";
     }
+    &__title {
+      margin-bottom: 13px;
+    }
+  }
+  @include sm-tablet {
+    &__title {
+      margin-bottom: 27px;
+    }
+    &__filter-lg {
+      margin-bottom: 16px;
+    }
+  }
+  @include mobile {
+    &__wrapper {
+      grid-template-areas:
+        "couch couch";
+        grid-template-columns: auto;
+    }
+    &__wrap--grid {
+      justify-content: normal;
+      grid-template-areas:
+      "title title"
+      "tags tags"
+      "filter-lg filter-lg"
+      "cards cards"
+      "btns btns";
+    }
+    &__title {
+      margin-bottom: 8px;
+    }
   }
 }
 .catalog .header {
   padding-bottom: 21px;
+  @include sm-tablet {
+    padding-bottom: 23px;
+  }
+  @include mobile {
+    padding-bottom: 17px;
+  }
 }
 .breadcrumbs {
   grid-area: breadcrumbs;
+  @include mobile {
+    display: none;
+  }
 }
 .tag {
   display: flex;
   flex-wrap: wrap;
   align-self: flex-start;
+  align-items: baseline;
   &__item {
     position: relative;
     display: block;
     padding: 5px 9px;
+    margin-bottom: 10px;
     border-radius: 3px;
     font-size: 14px;
     line-height: 130%;
-    color: #666666;
+    color: $grey-shade;
     &--category {
-      background: #DAFFD1;
+      background: $lime-color;
     }
     &--price {
-      background: #FFF5D1;
+      background: $bone;
     }
     &--sale {
-      background: #EBD1FF;
+      background: $pink-violet;
     }
     &--color {
-      background: #EAEAEA;
+      background: $md-grey;
     }
     &.is-hide {
       display: none;
@@ -127,32 +168,54 @@
       height: 13px;
       background: url("../img/sprite.svg#close") no-repeat;
     }
+    &::before{
+      content: "";
+      position: absolute;
+      top: 32%;
+      right: 6%;
+      width: 13px;
+      height: 13px;
+      border-bottom: 1px solid transparent;
+    }
+  }
+  @include mobile {
+    &__item {
+      margin-bottom: 16px;
+    }
   }
 }
 .btns {
   display: flex;
   &__item {
     padding: 6px 9px;
-    border: 2px solid #A65CF0;
+    border: 2px solid $color-text-primary;
     border-radius: 10px;
     cursor: pointer;
   }
   &__item:not(:last-child) {
     margin-right: 16px;
   }
+  &__item:nth-child(n + 3) {
+    display: none;
+  }
   &__btn {
     @include btn-reset;
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
-    color: #A65CF0;
+    color: $color-text-primary;
   }
   &__item.is-active {
     border-color: transparent;
-    background: #7033AC;
+    background: $primary-shade;
   }
   &__item.is-active .btns__btn {
-    color: #FFFFFF;
+    color: $white;
+  }
+  @include sm-tablet {
+    &__item:nth-child(n + 3) {
+      display: block;
+    }
   }
 }
 .promo {
@@ -163,11 +226,12 @@
     margin-bottom: 67px;
     padding: 30px;
     height: 100%;
+    min-height: 360px;
     max-height: 360px;
     border-radius: 10px;
     background-position: top;
     background-size: 296px;
-    background-color: #333333;
+    background-color: $color-text;
     background-image: url("../img/catalog/promo.png");
   }
   &__title--catalog {
@@ -178,7 +242,7 @@
     margin-bottom: 12px;
     font-size: 16px;
     line-height: 22px;
-    color: #999999;
+    color: $grey;
   }
   &__link {
     margin: 0;
@@ -193,6 +257,23 @@
   padding-left: 32px;
   font-size: 16px;
   line-height: 130%;
+  & .filter__label--short-price {
+    display: none;
+  }
+  @include mobile {
+    display: block;
+    padding-left: 25px;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    & .filter__label--short-price {
+      display: inline;
+    }
+    & .filter__label--long-price {
+      display: none;
+    }
+  }
 }
 .filter__label--catalog.custom-checkbox__content::before {
   top: 0;
@@ -204,4 +285,9 @@
   height: 20px;
   background-size: 19px 12px;
 }
-
+.tag__close:focus::before {
+  border: 1px solid $color-text-primary;
+}
+.tag__close:focus {
+  outline: none;
+}

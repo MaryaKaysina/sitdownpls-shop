@@ -16,6 +16,12 @@
   }
 }
 
+@mixin two-tablet {
+  @media (max-width: (1022px)) {
+    @content;
+  }
+}
+
 @mixin sm-tablet {
   @media (max-width: (992px)) {
     @content;

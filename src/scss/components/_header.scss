@@ -258,7 +258,7 @@
       position: absolute;
       top: 108px;
       left: 0;
-      z-index: 1000;
+      z-index: 10000;
       padding-top: 92px;
       padding-left: 72px;
       padding-bottom: 19px;
@@ -369,7 +369,7 @@
       position: absolute;
       top: 568px;
       left: 0;
-      z-index: 10;
+      z-index: 1000;
       padding: 21px 12px 13px;
       background: $grey-light;
       opacity: 0;
@@ -594,7 +594,7 @@
   display: none;
 }
 .choices__list--dropdown {
-  z-index: 10;
+  z-index: 1000;
 }
 .choices__list--dropdown .choices__item--selectable {
   padding: 7px 16px;
@@ -678,7 +678,7 @@
 }
 .choices__filter .choices__inner {
   position: relative;
-  z-index: 20;
+  z-index: 2000;
   padding: 16px 28px!important;
   border: 2px solid $grey-light;
   border-radius: 0px 10px 10px 0px;
