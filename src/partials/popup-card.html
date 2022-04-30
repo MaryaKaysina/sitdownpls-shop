@@ -1,0 +1,87 @@
+<div class="popup-img">
+  <div class="overlay"></div>
+  <div class="popup-img__wrap">
+    <div class="popup-img__swiper-1">
+      <div class="card-main__images popup-img__images swiper-wrapper">
+        <picture class="card-main__img popup-img__img swiper-slide">
+          <img src="img/card/1.png" alt="Синий диваан" loading="lazy" width="624" height="245">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/2_1.png" alt="Синий диваан" loading="lazy" width="123" height="61">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/3_1.png" alt="Синий диваан" loading="lazy" width="66" height="61">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/4_1.png" alt="Синий диваан" loading="lazy" width="134" height="61">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/5_1.png" alt="Синий диваан" loading="lazy" width="137" height="61">
+        </picture>
+      </div>
+    </div>
+    <div thumbsSlider="" class="popup-img__swiper-2">
+      <div class="swiper-btn swiper-btn--popup">
+        <div class="swiper-button-next swiper-button-next--popup">
+          <svg class="swiper-btn__arrow" width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle class="circle" cx="16" cy="16" r="15"/>
+            <path class="path" d="M14 11L19 16L14 21" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="swiper-button-prev swiper-button-prev--popup">
+          <svg class="swiper-btn__arrow" width="32" height="32" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle class="circle" cx="16" cy="16" r="15"/>
+            <path class="path" d="M14 11L19 16L14 21" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="card-main__images popup-img__images swiper-wrapper">
+        <picture class="card-main__img popup-img__img swiper-slide">
+          <img src="img/card/1.png" alt="Синий диваан" loading="lazy" width="624" height="245">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/2.png" alt="Синий диваан" loading="lazy" width="123" height="61">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/3.png" alt="Синий диваан" loading="lazy" width="66" height="61">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/4.png" alt="Синий диваан" loading="lazy" width="134" height="61">
+        </picture>
+        <picture class="card-main__slide popup-img__slide swiper-slide">
+          <img src="img/card/5.png" alt="Синий диваан" loading="lazy" width="137" height="61">
+        </picture>
+      </div>
+    </div>
+    <button class="popup__close" aria-label="Попап: Изображения дивана! Кнопка закрыть" data-close="popup-img">
+      <svg class="popup__close-icon" width="20" height="20"><use xlink:href="img/sprite.svg#close"></use></svg>
+    </button>
+  </div>
+</div>
+
+<div class="popup-buy">
+  <div class="overlay"></div>
+  <div class="popup-buy__wrap">
+    <div class="popup-buy__content">
+      <h3 class="popup-buy__title">Купить в один клик</h3>
+      <p class="popup-buy__text">Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.</p>
+      <form action="mail.php" class="popup-buy__form contacts__form" method="post" id="form">
+        <input type="hidden" name="project_name" value="SitDownPls - интернет магазин мебели">
+        <input type="hidden" name="admin_email[]" value="linkinpark335@gmail.com">
+        <input type="hidden" name="form_subject" value="Заявка с сайта SitDownPls">
+        <input type="text" class="contacts__input" placeholder="Как вас зовут?" name="name" data-validate-field = "name" autocomplete="off">
+        <input type="tel" class="contacts__input" placeholder="Ваш телефон" name="phone" data-validate-field = "tel" data-validate-rules = "phone" autocomplete="off">
+        <button  type="submit" class="btn btn--primary btn--contacts btn--popup-buy">Отправить</button>
+        <label for="check" class="custom-checkbox">
+          <input class="contacts__check custom-checkbox__field" type="checkbox" name="check" id="check" checked>
+          <span class="contacts__agreement custom-checkbox__content">
+            Принимаю <a href="#" class="contacts__link">пользовательское соглашение</a>
+          </span>
+        </label>
+      </form>
+      <button class="popup__close" aria-label="Попап: Купить в один клик! Кнопка закрыть" data-close="popup-buy">
+        <svg class="popup__close-icon" width="20" height="20"><use xlink:href="img/sprite.svg#close"></use></svg>
+      </button>
+    </div>
+  </div>
+</div>

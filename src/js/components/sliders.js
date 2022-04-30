@@ -1,4 +1,5 @@
 const index = document.querySelector('.index');
+const cardPage = document.querySelector('.card-page');
 
 if (index) {
   $(document).ready(function() {
@@ -62,4 +63,52 @@ if (index) {
       },
     });
   });
+}
+
+if (cardPage) {
+  $(document).ready(function() {
+    const swiperLike = new Swiper('.swiper--like', {
+      slidesPerView: 'auto',
+      slidesPerGroup: 2,
+      navigation: {
+        nextEl: '.swiper-button-next--like',
+        prevEl: '.swiper-button-prev--like',
+      },
+      breakpoints: {
+        320: {
+          slidesPerGroup: 2,
+        },
+        993: {
+          slidesPerGroup: 3,
+        },
+      },
+    });
+
+    const swiper = new Swiper(".popup-img__swiper-2", {
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next--popup',
+        prevEl: '.swiper-button-prev--popup',
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        701: {
+          slidesPerView: 2,
+        },
+        992: {
+          slidesPerView: 3,
+        },
+        1271: {
+          slidesPerView: 4,
+        }
+      }
+    });
+    const swiper2 = new Swiper(".popup-img__swiper-1", {
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+  })
 }

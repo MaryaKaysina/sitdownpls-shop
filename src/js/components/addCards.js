@@ -12,7 +12,7 @@ const renderCards = (cards, count, countView, container) => {
           <img class="card__img ${!card.imgHeight ? '' : 'card__img--height'}" src="${card.img}" alt="${card.alt}" loading="lazy" width="${card.width}" height="${card.height}">
         </picture>
         <h3 class="card__title card__title--rating ${!card.titleBig ? '' : 'card__title--big'}">
-          <a href="#" class="card__link">${card.title}</a>
+          <a href="${card.link}" class="card__link">${card.title}</a>
         </h3>
         <div class="card__price-wrap">
           <span class="card__price">${card.price}</span>

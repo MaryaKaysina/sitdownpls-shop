@@ -1,6 +1,7 @@
 const index = document.querySelector('.index');
+const cardPage = document.querySelector('.card-page');
 
-if (index) {
+if (index || cardPage) {
   let selector = document.querySelector("input[type='tel']");
   let im = new Inputmask("+7 (999) - 999-99-99");
   const contactBtn = document.querySelector('.btn--contacts');
@@ -52,6 +53,10 @@ if (index) {
       xhr.open('POST', 'mail.php', true);
       xhr.send(formData);
 
+      if (cardPage) {
+        const popupBuy = document.querySelector('.popup-buy');
+        popupBuy.classList.remove('is-active');
+      }
       createPopup();
       contactsInput.forEach(i => i.classList.remove('is-success'));
       form.reset();

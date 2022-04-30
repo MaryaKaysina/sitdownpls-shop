@@ -16,6 +16,7 @@
 @import "./components/footer";
 @import "./components/filter";
 @import "./components/catalog";
+@import "./components/card";
 
 .title-hidden {
   position: absolute;
@@ -100,6 +101,13 @@
     &:not(:nth-child(3n)) {
       margin-right: 32px;
     }
+    &--like {
+      min-height: 420px;
+      height: auto;
+    }
+    &--like:not(:nth-child(4n)) {
+      margin-right: 32px;
+    }
   }
   &__label {
     position: absolute;
@@ -149,6 +157,9 @@
     &--rating {
       height: 153px;
       width: 113%;
+    }
+    &--like {
+      height: 153px;
     }
   }
   &__img {
@@ -202,6 +213,10 @@
     &--old {
       text-decoration-line: line-through;
       color: $grey;
+    }
+    &--like {
+      display: block;
+      margin-bottom: 13px;
     }
   }
   @include larg {
@@ -288,6 +303,15 @@
       &--rating {
         min-height: 370px;
       }
+      &--like {
+        padding: 16px;
+        width: 47.4%;
+        min-height: 278px;
+        height: auto;
+      }
+      &--like:not(:nth-child(2n)) {
+        margin-right: 5.2%;
+      }
     }
     &__title {
       &--big {
@@ -297,11 +321,19 @@
       &--rating {
         font-size: 16px;
       }
+      &--like {
+        margin-bottom: 18px;
+        font-size: 16px;
+        line-height: 130%;
+      }
     }
     &__pic {
       &--rating {
         max-width: 270px;
         height: 22vw;
+      }
+      &--like {
+        height: 145px;
       }
     }
     &__img {
@@ -335,6 +367,10 @@
         margin-bottom: 17px;
         width: 99%;
         height: max(22vw, 74px);
+      }
+      &--like {
+        margin-bottom: 3px;
+        height: 85px;
       }
     }
     &__title {
@@ -388,6 +424,16 @@
     margin-bottom: 14px;
     padding: 17px 32px;
   }
+  &--card-main {
+    margin-bottom: 12px;
+    padding: 19px 35px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+  &--popup-buy {
+    margin-bottom: 12px;
+  }
   &--hide {
     display: none!important;
   }
@@ -406,6 +452,9 @@
       margin-bottom: 13px;
       padding: 17px 32px;
     }
+    &--card-main {
+      padding: 19px 35px;
+    }
   }
   @include sm-tablet {
     &--contacts {
@@ -418,6 +467,9 @@
       margin-bottom: 11px;
       padding: 17px 32px;
       width: auto;
+    }
+    &--like {
+      padding: 12px 25px;
     }
   }
   @include mobile {
@@ -437,6 +489,10 @@
     display: flex;
     justify-content: space-between;
     justify-self: self-end;
+    &--popup {
+      display: none;
+      top: 38%;
+    }
   }
   &--special,
   &--useful {
@@ -457,10 +513,21 @@
       transition: all .3s ease-in-out;
     }
   }
+  @include lg-tablet {
+    &-btn {
+      &--popup {
+        display: flex;
+      }
+    }
+  }
   @include lg-mobile {
     &-btn {
       right: -38px;
       justify-self: center;
+      &--like {
+        top: 16px;
+        order: 1;
+      }
     }
   }
 }
@@ -486,10 +553,23 @@
 }
 .swiper-button-next {
   right: 0;
+  &--popup {
+    right: 16px;
+    @include lg-mobile {
+      right: 54px;
+    }
+  }
 }
 .swiper-button-prev {
   right: 0;
   margin-right: 45px;
+  &--popup {
+    left: 16px;
+    right: auto;
+    @include lg-mobile {
+      left: -22px;
+    }
+  }
 }
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
@@ -501,13 +581,21 @@
 .swiper-button-next.swiper-button-disabled .path {
   stroke: $grey;
 }
+.swiper-button-prev--like,
+.swiper-button-next--like {
+  top: -57px;
+  @include lg-mobile {
+    top: auto;
+    right: 50%;
+  }
+}
 .popup {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 9999;
   background: rgb(51 51 51 / .3);
   opacity: 0;
   visibility: hidden;
@@ -544,6 +632,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 9999;
     &::after {
       content: "";
       position: absolute;
@@ -588,6 +677,13 @@
 }
 .popup.is-active .popup__wrap{
   transform: scale(1) translate(-50%, -50%);
+}
+.card-page .popup__wrap {
+  top: 184px;
+  transform: scale(0) translateX(-50%);
+}
+.popup.is-active .popup__wrap {
+  transform: scale(1) translateX(-50%);
 }
 .breadcrumbs {
   &__list {
