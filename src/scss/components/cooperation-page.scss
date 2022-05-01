@@ -1,0 +1,207 @@
+.cooperation-page .header {
+  padding-bottom: 20px;
+  @include sm-tablet {
+    padding-bottom: 24px;
+  }
+  @include mobile {
+    padding-bottom: 10px;
+  }
+}
+.cooperation-main {
+  padding-top: 32px;
+  padding-bottom: 92px;
+  max-width: 843px;
+  @include sm-tablet {
+    max-width: none;
+  }
+  @include mobile {
+    padding-top: 7px;
+    padding-bottom: 71px;
+  }
+}
+.section {
+  &__subtitle--cooperation-main {
+    @include p-reset;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    color: $color-text;
+  }
+  &__text {
+    @include p-reset;
+    margin-bottom: 32px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 180%;
+    color: $grey-shade;
+  }
+  &__list {
+    @include list-reset;
+    margin-bottom: 32px;
+    &--number {
+      position: relative;
+      padding-inline-start: 26px;
+      margin-bottom: 54px;
+      width: 99%;
+      & .section__item {
+        margin-bottom: 13px;
+      }
+      & .section__item::before {
+        content: counter(list-item) ". ";
+        position: absolute;
+        left: 0;
+        font-size: 16px;
+        color: $color-text-secondary;
+      }
+    }
+  }
+  &__item {
+    font-size: 16px;
+    line-height: 180%;
+    color: $grey-shade;
+  }
+  &__item--icon {
+    position: relative;
+    padding-left: 37px;
+    width: 74%;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-shade;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  &__item--icon:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &__item--icon:nth-child(1) {
+    &::before {
+      background: url("../img/cooperation/1.svg");
+    }
+  }
+  &__item--icon:nth-child(2) {
+    &::before {
+      background: url("../img/cooperation/2.svg");
+    }
+  }
+  &__item--icon:nth-child(3) {
+    &::before {
+      background: url("../img/cooperation/3.svg");
+    }
+  }
+  &__footer {
+    @include p-reset;
+    position: relative;
+    padding-left: 109px;
+    width: 75%;
+    font-size: 24px;
+    line-height: 150%;
+    color: $color-text;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -22px;
+      width: 77px;
+      height: 116px;
+      background: url("../img/cooperation/4.png");
+      background-size: contain;
+    }
+  }
+  @include sm-tablet {
+    &__list--number {
+      width: 100%;
+    }
+    &__item--icon {
+      width: 100%;
+    }
+    &__footer {
+      width: 100%;
+    }
+  }
+  @include lg-mobile {
+    &__footer {
+      padding-left: 52px;
+      &::before {
+        top: 10px;
+        width: 36px;
+        height: 54px;
+      }
+    }
+  }
+  @include mobile {
+    &__subtitle {
+      &--cooperation-main {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      &--big {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+    &__text {
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 180%;
+    }
+    &__item--icon {
+      font-size: 14px;
+      line-height: 150%;
+    }
+    &__item {
+      font-size: 14px;
+      line-height: 150%;
+    }
+    &__footer {
+      width: 80%;
+      font-size: 16px;
+      line-height: 150%;
+    }
+    &__list--number {
+      margin-bottom: 33px;
+    }
+    &__list--number .section__item {
+      line-height: 178%;
+    }
+  }
+}
+.list {
+  &__item:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &__title {
+    @include p-reset;
+    margin-bottom: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $color-text-secondary;
+  }
+  &__text {
+    @include p-reset;
+    font-size: 16px;
+    line-height: 180%;
+    color: $grey-shade;
+  }
+  @include sm-tablet {
+    width: 99%;
+  }
+  @include mobile {
+    margin-bottom: 30px;
+    width: 100%;
+    &__title {
+      margin-bottom: 11px;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 180%;
+    }
+  }
+}

@@ -13,7 +13,7 @@
 .card-page .breadcrumbs {
   margin-bottom: 32px;
 }
-.card-main {
+.site-container .card-main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
@@ -390,7 +390,7 @@
     position: absolute;
     top: 12vh;
     left: 50%;
-    z-index: 9999;
+    z-index: 999999;
     max-width: 1280px;
     width: calc(100% - 72px);
     background: $white;
@@ -450,7 +450,7 @@
   }
   @include lg-tablet {
     &__wrap {
-      top: 15vh;
+      top: 20vh;
     }
     &__swiper-1 .swiper-slide {
       padding-left: 66px;
@@ -476,7 +476,7 @@
   }
   @include sm-tablet {
     &__wrap {
-      top: 19vh;
+      top: 25vh;
       width: calc(100% - 144px);
     }
     &__swiper-1 .swiper-slide {
@@ -540,7 +540,7 @@
     position: absolute;
     top: 184px;
     left: 50%;
-    z-index: 9999;
+    z-index: 999999;
     padding: 30px;
     max-width: 624px;
     width: 100%;
@@ -559,6 +559,9 @@
     font-size: 32px;
     line-height: 100%;
     color: $color-text;
+  }
+  &__content {
+    margin: 0;
   }
   &__text {
     @include p-reset;
@@ -597,7 +600,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 999999;
   height: 100%;
   background: $color-text;
   opacity: 0;

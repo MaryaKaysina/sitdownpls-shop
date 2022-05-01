@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Сотрудничество</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/vendor.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <!-- JS -->
+  <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <script defer src="https://api-maps.yandex.ru/2.1/?ead4f884-175f-4708-88bc-af0468c3ce39=&lang=ru_RU"></script>
+  <script defer src="/js/vendor.js"></script>
+  <script defer src="/js/main.js"></script>
+</head>
+
+<body class="cooperation-page">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main>
+      <div class="container">
+        <nav class="breadcrumbs">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+              <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link is-active">/ Сотрудничество</a></li>
+            </ul>
+        </nav>
+        @include('partials/cooperation-page.html')
+      </div>
+    </main>
+    @include('partials/footer.html')
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+.contacts-page .header {
+  padding-bottom: 20px;
+  @include sm-tablet {
+    padding-bottom: 23px;
+  }
+  @include mobile {
+    padding-bottom: 10px;
+  }
+}
+.contacts-main {
+  padding-top: 32px;
+  padding-bottom: 70px;
+  &__input {
+    @include input-reset;
+    margin-bottom: 30px;
+    margin-right: 25px;
+    padding: 6px 17px;
+    width: 49%;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: $grey-light;
+    font-size: 16px;
+    line-height: 40px;
+    transition: background .3s ease-in-out, border .3s ease-in-out;
+  }
+  &__input::placeholder {
+    color: $grey;
+  }
+  @include lg-tablet {
+    &__input {
+      margin-right: 27px;
+      width: 65.5%;
+    }
+  }
+  @include sm-tablet {
+    &__input {
+      margin-right: 26px;
+      width: 65%;
+    }
+  }
+  @include lg-mobile {
+    &__input {
+      margin-right: 0;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+  }
+  @include mobile {
+    padding-top: 7px;
+    padding-bottom: 70px;
+  }
+}
+@include hover-ef {
+  .contacts-main__input:hover {
+    background: $md-grey;
+  }
+}
+.contacts-main__input:focus {
+  border: 1px solid $color-text-primary;
+  background: $pink-light;
+  outline: none;
+}
+[class*="copyrights-pane"] {
+  display: none !important;
+}
+.ymaps-2-1-79-balloon {
+  border-radius: 10px;
+}
+.ymaps-2-1-79-balloon__layout {
+  border-radius: 10px;
+}
+.ymaps-2-1-79-balloon_layout_panel {
+  max-width: 343px;
+  border-radius: 10px;
+  @include mobile {
+    max-width: 232px;
+  }
+}
+.ymaps-2-1-79-balloon__content {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 343px;
+  border-radius: 10px;
+  & ymaps {
+    height: auto !important;
+  }
+  @include mobile {
+    max-width: 232px;
+  }
+}
+.ymaps-2-1-79-balloon__close {
+  display: none;
+}
+.ballon {
+  padding: 30px;
+  padding-bottom: 20px;
+  max-width: 343px;
+  &__title {
+    @include p-reset;
+    margin-bottom: 7px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $color-text;
+  }
+  &__subtitle {
+    @include p-reset;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    color: $color-text;
+  }
+  & .phone {
+    margin-bottom: 13px;
+  }
+  &__text {
+    @include p-reset;
+    padding-top: 9px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    color: $grey;
+    &--content {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 180%;
+      color: $color-text;
+    }
+    &--line {
+      padding: 13px 0;
+      border-top: 1px solid $grey-light;
+      border-bottom: 1px solid $grey-light;
+    }
+  }
+  @include mobile {
+    padding: 24px 20px;
+    max-width: 232px;
+    &__title {
+      font-size: 14px;
+      line-height: 19px;
+    }
+    &__subtitle {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__text {
+      font-size: 12px;
+      line-height: 180%;
+      &--content {
+        font-size: 12px;
+        line-height: 180%;
+      }
+    }
+  }
+}
