@@ -15,6 +15,27 @@ if(catalogPage) {
     const minPrice = document.querySelector('.input__price--min');
     const maxPrice = document.querySelector('.input__price--max');
 
+    const filterMore = document.querySelectorAll('.filter__more');
+
+    filterMore.forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+
+        el.classList.add('is-hide');
+        const children = e.target.parentElement.children;
+        for(let i = 0; i < children.length; i++) {
+          if (children[i].classList.contains('filter__checkbox--hide')) {
+            children[i].classList.remove('filter__checkbox--hide');
+          }
+        }
+        // children.forEach(child => {
+        //   console.log(child.classList.contains('filter__checkbox--hide'));
+        // })
+
+        // if(e.target.parentElement.children.classList.contains('filter__checkbox--hide'))
+      })
+    })
+
     function toggleFilterMain() {
       if(window.innerWidth <= 1270) {
         filterMain.remove();

@@ -1,3 +1,7 @@
+.contacts-page .container {
+  position: relative;
+}
+
 .contacts-page .header {
   padding-bottom: 20px;
   @include sm-tablet {
@@ -153,4 +157,17 @@
       }
     }
   }
+}
+.not-found {
+  position: absolute;
+  bottom: 66px;
+  width: calc(100% - 30px);
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+  &.is-hide {
+    opacity: 0;
+  }
+}
+#map.is-hide {
+  opacity: 0;
 }

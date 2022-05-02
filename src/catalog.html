@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#111111">
-  <title>Каталог</title>
+  <title>Купить прямые диваны</title>
   <!-- CSS -->
   <link rel="stylesheet" href="/css/vendor.css">
   <link rel="stylesheet" href="/css/main.css">
@@ -18,23 +18,36 @@
   <script defer src="/js/main.js"></script>
 </head>
 
-<body class="catalog-main">
+<body class="catalog">
   <div class="site-container">
     @include('partials/header.html')
     <main>
-      <h1 class="site-title title-hidden">Каталог</h1>
-      <nav class="breadcrumbs">
-        <div class="container">
-          <ul class="breadcrumbs__list">
-            <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
-            <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link is-active">/ Каталог</a></li>
-          </ul>
+      <h1 class="site-title title-hidden">Купить прямые диваны</h1>
+      <div class="container">
+        <div class="catalog__wrapper">
+          <nav class="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="/" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Каталог</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Диваны</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link is-active">Прямые диваны</a></li>
+              </ul>
+          </nav>
+          <aside class="catalog__wrap catalog__wrap--aside">
+            @include('partials/filter.html')
+          </aside>
+          <div class="catalog__wrap catalog__wrap--grid">
+            <div class="catalog__filter-lg filter-lg">
+              @include('partials/filter-lg.html')
+            </div>
+            @include('partials/cards-couch.html')
+          </div>
         </div>
-      </nav>
-      @include('partials/cards.html')
+      </div>
     </main>
     @include('partials/footer.html')
   </div>
+  @include('partials/popup.html')
 </body>
 
 </html>

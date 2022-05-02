@@ -8,7 +8,7 @@ if(contactsPage) {
           zoom: 14,
       });
 
-    var myPlacemark = new ymaps.Placemark([55.753777, 37.636060], {
+    var myPlacemark1 = new ymaps.Placemark([55.753777, 37.636060], {
       balloonContentBody:
       `<div class="ballon">
         <h2 class="ballon__title">SitDownPls на Солянке </h2>
@@ -32,8 +32,8 @@ if(contactsPage) {
     var myPlacemark2 = new ymaps.Placemark([55.767511, 37.649620], {
       balloonContentBody:
       `<div class="ballon">
-        <h2 class="ballon__title">SitDownPls на Солянке </h2>
-        <p class="ballon__subtitle">м. Китай-город, ул. Солянка, д.24</p>
+        <h2 class="ballon__title">SitDownPls в Харитоньевском переулке </h2>
+        <p class="ballon__subtitle">м. Красные Ворота, ул. Большой Харитоньевский переулок, 21с4</p>
         <a href="tel:+74958854547" class="header__phone phone" aria-label="Позвонить по телефону">
           <svg class="phone__icon" width="22" height="22"><use xlink:href="img/sprite.svg#phone"></use></svg>
           +7 (495) 885-45-47</a>
@@ -50,10 +50,10 @@ if(contactsPage) {
       iconImageOffset: [0, 0]
     });
 
-    myMap.geoObjects.add(myPlacemark);
+    myMap.geoObjects.add(myPlacemark1);
     myMap.geoObjects.add(myPlacemark2);
 
-    myPlacemark.events.add('balloonopen', function (e) {
+    myPlacemark1.events.add('balloonopen', function (e) {
       const close = document.querySelector('.popup__close');
       close.addEventListener('click', () => {
         myMap.balloon.close();
@@ -75,27 +75,40 @@ if(contactsPage) {
     myMap.controls.remove('rulerControl'); // удаляем контрол правил
     myMap.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
 
-    // function checkWidth() {
-    //   if(window.innerWidth < 1361) {
-    //     myMap.setCenter([55.75846806898367,37.60108849999989]);
-    //   } else {
-    //     myMap.setCenter([55.749438, 37.617937]);
-    //   }
-    //   if(window.innerWidth < 1250) {
-    //     myMap.setCenter([55.76083952313602,37.61705300805652]);
-    //   }
-    //   if(window.innerWidth < 861) {
-    //     myMap.setCenter([55.760161979584744,37.61018655297841]);
-    //   }
-    //   //
-    // }
+    const searchBtn = document.querySelector('.btn--contacts-main');
+    const searchInput = document.querySelector('.contacts-main__input');
+    const notFound = document.querySelector('.not-found');
+    const mapBlock = document.getElementById('map');
+    const ballon1 = myPlacemark1.properties._data.balloonContentBody;
+    const ballon2 = myPlacemark2.properties._data.balloonContentBody;
 
-    // checkWidth();
+    console.log(myPlacemark1);
 
-    // let timer;
-    // window.addEventListener('resize', () => {
-    //   clearTimeout(timer);
-    //   timer = setTimeout(checkWidth, 500);
-    // });
+    searchBtn.addEventListener('click', e => {
+      e.preventDefault();
+      if (searchInput.value.length > 0) {
+        if(ballon1.toLowerCase().includes(searchInput.value.toLowerCase())) {
+          myPlacemark1.balloon.open();
+          const close = document.querySelector('.popup__close');
+          close.focus();
+          close.addEventListener('click', () => {
+            myMap.balloon.close();
+          })
+        } else if(ballon2.toLowerCase().includes(searchInput.value.toLowerCase())) {
+          myPlacemark2.balloon.open();
+          const close = document.querySelector('.popup__close');
+          close.focus();
+          close.addEventListener('click', () => {
+            myMap.balloon.close();
+          })
+        } else {
+          notFound.classList.remove('is-hide');
+          mapBlock.classList.add('is-hide');
+        }
+      } else {
+        notFound.classList.add('is-hide');
+        mapBlock.classList.remove('is-hide');
+      }
+    })
   }
 }

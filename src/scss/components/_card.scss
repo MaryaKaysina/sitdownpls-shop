@@ -144,7 +144,6 @@
     grid-template-areas:
       "key value";
     gap: 32px;
-    white-space: nowrap;
     &::after {
       content: "";
       position: absolute;
@@ -158,6 +157,7 @@
   &__key {
     position: relative;
     grid-area: key;
+    align-self: end;
     width: fit-content;
     font-weight: 400;
     font-size: 14px;
@@ -190,6 +190,12 @@
         right: 51%;
       }
     }
+  }
+  @include two-tablet {
+    grid-template-areas:
+      "images images  images  images  images  desc  desc  desc  desc"
+      "about  about   about   about   about   about about about about"
+      "list   list    list    list    list    list  list  list  list";
   }
   @include sm-tablet {
     grid-template-columns: repeat(6, 1fr);

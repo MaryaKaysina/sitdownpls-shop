@@ -713,9 +713,18 @@
     display: flex;
   }
   &__item {
+    position: relative;
     font-size: 14px;
     line-height: 100%;
     color: $grey;
+  }
+  &__item:not(:first-child) {
+    padding-left: 8px;
+    &::before {
+      content: "/";
+      position: absolute;
+      left: 0;
+    }
   }
   &__item:not(:last-child) {
     margin-right: 6px;
@@ -726,11 +735,6 @@
     &.is-active {
       color: $primary-shade;
     }
-  }
-}
-.catalog-main .breadcrumbs {
-  &__list {
-    margin-bottom: 32px;
   }
 }
 @include hover-ef {

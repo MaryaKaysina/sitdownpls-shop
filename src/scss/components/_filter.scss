@@ -32,8 +32,14 @@
   &__checkbox {
     margin-bottom: 11px;
     max-width: 95%;
+    transition: opacity .3s ease-in-out;
     &:last-child {
       margin-bottom: 9px;
+    }
+    &--hide {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
     }
   }
   &__more {
@@ -43,6 +49,9 @@
     border-bottom: 1px solid transparent;
     color: $color-text-primary;
     transition: border-bottom .3s ease-in-out, color .3s ease-in-out;
+    &.is-hide {
+      display: none;
+    }
   }
   &__more::after {
     content: "";
