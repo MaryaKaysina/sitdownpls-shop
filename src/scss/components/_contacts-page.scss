@@ -166,6 +166,7 @@
   transition: opacity .3s ease-in-out;
   &.is-hide {
     opacity: 0;
+    visibility: hidden;
   }
 }
 #map.is-hide {
