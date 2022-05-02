@@ -28,11 +28,6 @@ if(catalogPage) {
             children[i].classList.remove('filter__checkbox--hide');
           }
         }
-        // children.forEach(child => {
-        //   console.log(child.classList.contains('filter__checkbox--hide'));
-        // })
-
-        // if(e.target.parentElement.children.classList.contains('filter__checkbox--hide'))
       })
     })
 

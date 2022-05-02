@@ -162,11 +162,26 @@
   position: absolute;
   bottom: 66px;
   width: calc(100% - 30px);
+  height: 510px;
+  object-fit: cover;
   opacity: 1;
   transition: opacity .3s ease-in-out;
   &.is-hide {
     opacity: 0;
     visibility: hidden;
+  }
+  &__img {
+    object-fit: cover;
+    height: 100%;
+  }
+  @include larg {
+    width: calc(100% - 72px);
+  }
+  @include sm-tablet {
+    width: calc(100% - 144px);
+  }
+  @include lg-mobile {
+    width: calc(100% - 30px);
   }
 }
 #map.is-hide {
