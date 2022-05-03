@@ -147,7 +147,7 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 7px;
+      top: 18px;
       left: 0;
       right: 48%;
       z-index: -1;
@@ -157,7 +157,6 @@
   &__key {
     position: relative;
     grid-area: key;
-    align-self: end;
     width: fit-content;
     font-weight: 400;
     font-size: 14px;
