@@ -163,7 +163,6 @@
   bottom: 66px;
   width: calc(100% - 30px);
   height: 510px;
-  object-fit: cover;
   opacity: 1;
   transition: opacity .3s ease-in-out;
   &.is-hide {
