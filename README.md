@@ -1,6 +1,6 @@
 # Интернет магазин SitDownPls
 
-Demo -> [SitDownPls][https://weblayout-advanced-coursework.vercel.app/]
+Demo -> [SitDownPls](https://weblayout-advanced-coursework.vercel.app/)
 
 `gulp` - базовая команда, которая запускает сборку для разработки, используя browser-sync
 
